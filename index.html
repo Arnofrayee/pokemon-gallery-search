@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pokémon</title>
+		<link
+			rel="icon"
+			href="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
+			type="image/svg+xml"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="loading-bar" style="width: 0%"></div>
+
+		<header>
+			<div class="logo">Poké<span>mon</span></div>
+			<div class="search-wrap">
+				<svg
+					width="15"
+					height="15"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.5"
+				>
+					<circle cx="11" cy="11" r="8" />
+					<path d="m21 21-4.35-4.35" />
+				</svg>
+				<input
+					type="text"
+					id="search"
+					placeholder="Rechercher un Pokémon…"
+					autocomplete="off"
+				/>
+			</div>
+			<span class="count-badge" id="count-badge">— Pokémon</span>
+		</header>
+
+		<div class="app">
+			<div class="grid-panel">
+				<div id="pokemon-grid"></div>
+			</div>
+
+			<aside class="detail-panel">
+				<div class="detail-empty" id="detail-empty">
+					<svg
+						class="pokeball-icon"
+						viewBox="0 0 100 100"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<circle cx="50" cy="50" r="48" stroke="white" stroke-width="4" />
+						<path d="M2 50h96" stroke="white" stroke-width="4" />
+						<circle
+							cx="50"
+							cy="50"
+							r="15"
+							stroke="white"
+							stroke-width="4"
+							fill="#0d0f1a"
+						/>
+						<circle cx="50" cy="50" r="7" fill="white" />
+						<path d="M2 50a48 48 0 0 1 96 0" fill="white" fill-opacity="0.05" />
+					</svg>
+					<p>Sélectionne un Pokémon pour voir ses détails</p>
+				</div>
+				<div class="detail-content" id="detail-content">
+					<div class="detail-banner" id="detail-banner">
+						<img id="detail-img" src="" alt="" />
+						<div class="detail-id" id="detail-id"></div>
+						<div class="detail-name" id="detail-name"></div>
+						<div class="types" id="detail-types"></div>
+					</div>
+
+					<p class="section-title">Infos</p>
+					<div class="detail-row">
+						<span class="label">Taille</span>
+						<span class="value" id="d-height">—</span>
+					</div>
+					<div class="detail-row">
+						<span class="label">Poids</span>
+						<span class="value" id="d-weight">—</span>
+					</div>
+					<div class="detail-row">
+						<span class="label">Capacité</span>
+						<span class="value" id="d-ability">—</span>
+					</div>
+
+					<p class="section-title">Stats de base</p>
+					<div id="detail-stats"></div>
+				</div>
+			</aside>
+		</div>
+	</body>
+	<script src="app.js"></script>
+</html>
